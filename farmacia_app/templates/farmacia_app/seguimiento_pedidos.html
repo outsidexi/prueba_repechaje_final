@@ -1,0 +1,11 @@
+
+{% extends 'inicio.html' %}
+
+{% block content %}
+  <h2>Seguimiento de Pedido</h2>
+  <ul>
+    {% for seguimiento in seguimientos %}
+      <li>{{ seguimiento.estado }} - {{ seguimiento.ubicacion }} - {{ seguimiento.fecha_actualizacion }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

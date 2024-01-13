@@ -1,0 +1,11 @@
+
+
+{% block content %}
+    <h2>Crear Pedido</h2>
+    <form method="post" action="{% url 'crear_pedido' %}">
+        {% csrf_token %}
+        {{ pedido_form.as_p }}
+        {{ elemento_pedido_formset.as_table }}
+        <button type="submit">Realizar Pedido</button>
+    </form>
+{% endblock %}

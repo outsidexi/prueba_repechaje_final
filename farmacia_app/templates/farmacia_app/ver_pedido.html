@@ -1,0 +1,28 @@
+
+{% block content %}
+
+    <h2>Detalle del Pedido</h2>
+    <p>Cliente: {{ pedido.cliente }}</p>
+    <p>Dirección de entrega: {{ pedido.direccion_entrega }}</p>
+    <p>Fecha de entrega: {{ pedido.fecha_entrega }}</p>
+
+    <h3>Elementos del Pedido</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for elemento in elementos_pedido %}
+                <tr>
+                    <td>{{ elemento.producto }}</td>
+                    <td>{{ elemento.cantidad }}</td>
+                    <td>{{ elemento.precio }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

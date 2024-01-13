@@ -1,0 +1,18 @@
+<!-- templates/historial_pedidos.html -->
+
+{% extends 'inicio.html' %}
+
+{% block content %}
+  <h2>Historial de Pedidos</h2>
+
+  {% if historial_pedidos %}
+    <ul>
+      {% for pedido in historial_pedidos %}
+        <li>{{ pedido.fecha_pedido }} - {{ pedido.estado }}</li>
+        <!-- Mostrar otros campos del pedido según tus necesidades -->
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay historial de pedidos disponible.</p>
+  {% endif %}
+{% endblock %}

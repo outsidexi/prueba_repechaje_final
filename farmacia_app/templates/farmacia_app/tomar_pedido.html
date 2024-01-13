@@ -1,0 +1,12 @@
+
+{% extends 'inicio.html' %}
+
+{% block content %}
+  <h2>Tomar Pedido</h2>
+  <form method="post" action="{% url 'tomar_pedido' %}">
+    {% csrf_token %}
+    {{ form_pedido.as_p }}
+    {{ form_elemento.as_p }}
+    <button type="submit">Tomar Pedido</button>
+  </form>
+{% endblock %}

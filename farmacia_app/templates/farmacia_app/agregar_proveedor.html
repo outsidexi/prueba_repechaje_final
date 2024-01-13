@@ -1,0 +1,11 @@
+
+{% extends 'inicio.html' %}
+
+{% block content %}
+  <h2>Listar Proveedores</h2>
+  <ul>
+    {% for proveedor in proveedores %}
+      <li>{{ proveedor.nombre }} - {{ proveedor.direccion }} - {{ proveedor.telefono }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
